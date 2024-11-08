@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carnet de Validación de Repartidor</title>
+    <title>IDTD Colaborador</title>
     <style>
         /* Reset de márgenes */
         * {
@@ -19,19 +19,19 @@
             justify-content: center;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #ffffff; /* Fondo blanco */
+            background-color: #000000; /* Fondo negro */
             font-family: Arial, sans-serif;
         }
 
-        /* Título estilizado en negritas */
+        /* Título estilizado */
         h1 {
-            font-size: 28px;
-            color: #333;
+            font-size: 36px; /* Tamaño más grande */
+            color: #ffffff; /* Letras blancas */
             margin-bottom: 10px;
             text-align: center;
-            letter-spacing: 1px;
-            font-weight: bold;
+            font-family: 'Impact', sans-serif; /* Tipo de letra que resalta */
             text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
 
         /* Estilo del icono de verificación */
@@ -39,7 +39,7 @@
             display: flex;
             align-items: center;
             font-size: 18px;
-            color: #28a745; /* Verde más intenso para verificación */
+            color: #28a745; /* Verde intenso para verificación */
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -53,36 +53,41 @@
 
         /* Contenedor principal con relación de aspecto fija */
         .card {
-            width: 90%;
-            max-width: 700px; /* Tamaño mayor para pantallas grandes */
+            width: 95%; /* Contenedor más grande */
+            max-width: 800px; /* Tamaño mayor para pantallas grandes */
             aspect-ratio: 1004 / 591; /* Mantiene la proporción de la imagen */
             background-color: #ffffff;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
             border-radius: 15px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 20px; /* Espacio entre las imágenes */
         }
 
-        /* Imagen ocupando todo el contenedor y animación de rotación */
+        /* Imagen ocupando todo el contenedor y animación de vibración */
         .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            animation: rotateOnLoad 1.2s ease-out;
+            animation: vibrateOnLoad 1s ease-in-out;
         }
 
-        /* Definición de la animación de rotación */
-        @keyframes rotateOnLoad {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        /* Definición de la animación de vibración */
+        @keyframes vibrateOnLoad {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+            20%, 40%, 60%, 80% { transform: translateX(2px); }
         }
 
         /* Ajustes de tamaño para dispositivos móviles */
         @media (max-width: 768px) {
+            body {
+                padding-top: 5%; /* Mueve el contenido más arriba pero deja un pequeño espacio */
+            }
             h1 {
-                font-size: 22px;
+                font-size: 24px;
             }
             .card {
                 max-width: 90%; /* Se adapta al ancho de la pantalla en móviles */
@@ -91,10 +96,13 @@
     </style>
 </head>
 <body>
-    <h1>Carnet de Validación de Repartidor</h1>
+    <h1>IDTD Colaborador</h1>
     <div class="verified">Verificado</div>
     <div class="card">
-        <img src="1.png" alt="Foto de la carta de presentación">
+        <img src="1.jpg" alt="Parte frontal del carnet">
+    </div>
+    <div class="card">
+        <img src="2.jpg" alt="Parte trasera del carnet">
     </div>
 </body>
 </html>
